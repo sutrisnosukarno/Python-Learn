@@ -1,0 +1,163 @@
+Tutorial Lengkap Function di Python untuk Pemula
+
+1. Pengertian Function di Python
+
+Function (fungsi) adalah blok kode yang digunakan untuk melakukan tugas tertentu. Fungsi membantu mengorganisir kode agar lebih modular, mudah dibaca, dan digunakan kembali.
+
+2. Cara Membuat Function di Python
+
+Di Python, function didefinisikan menggunakan kata kunci def, diikuti dengan nama function dan tanda kurung ().
+
+Contoh Sederhana:
+
+# Definisi function
+def sapa():
+    print("Halo, selamat datang di Python!")
+
+# Memanggil function
+sapa()
+
+3. Parameter dan Argumen
+
+Function dapat menerima parameter yang digunakan untuk mengoperasikan data.
+
+Contoh Function dengan Parameter:
+
+def sapa_nama(nama):
+    print(f"Halo, {nama}! Selamat datang di Python.")
+
+sapa_nama("Andi")  # Output: Halo, Andi! Selamat datang di Python.
+
+Parameter dengan Nilai Default:
+
+def sapa_nama(nama="Pengguna"):
+    print(f"Halo, {nama}! Selamat datang di Python.")
+
+sapa_nama()       # Output: Halo, Pengguna! Selamat datang di Python.
+sapa_nama("Budi") # Output: Halo, Budi! Selamat datang di Python.
+
+4. Function dengan Return Value
+
+Function dapat mengembalikan nilai menggunakan return.
+
+Contoh Function dengan Return:
+
+def tambah(a, b):
+    return a + b
+
+hasil = tambah(5, 3)
+print(hasil)  # Output: 8
+
+5. Function dengan Multiple Return Values
+
+Function juga bisa mengembalikan lebih dari satu nilai.
+
+Contoh:
+
+def operasi_matematika(a, b):
+    tambah = a + b
+    kurang = a - b
+    return tambah, kurang
+
+hasil_tambah, hasil_kurang = operasi_matematika(10, 4)
+print(f"Hasil Penjumlahan: {hasil_tambah}")   # Output: Hasil Penjumlahan: 14
+print(f"Hasil Pengurangan: {hasil_kurang}")  # Output: Hasil Pengurangan: 6
+
+6. Function dengan *args dan **kwargs
+
+Python mendukung function dengan jumlah argumen tidak terbatas menggunakan *args (untuk tuple) dan **kwargs (untuk dictionary).
+
+Contoh *args:
+
+def jumlahkan(*angka):
+    return sum(angka)
+
+print(jumlahkan(1, 2, 3, 4))  # Output: 10
+
+Contoh **kwargs:
+
+def tampilkan_data(**data):
+    for k, v in data.items():
+        print(f"{k}: {v}")
+
+# Memanggil function dengan keyword arguments
+tampilkan_data(nama="Andi", umur=25, kota="Jakarta")
+
+7. Function Lambda
+
+Function lambda adalah function anonim yang bisa digunakan dalam satu baris kode.
+
+Contoh Lambda Function:
+
+perkalian = lambda a, b: a * b
+print(perkalian(5, 3))  # Output: 15
+
+8. Scope Variabel dalam Function
+
+Variabel dalam function memiliki scope (cakupan) lokal, tetapi bisa juga menggunakan variabel global.
+
+Contoh Scope Lokal:
+
+def contoh():
+    x = 10  # Variabel lokal
+    print(x)
+
+contoh()
+print(x)  # Error: x tidak dikenal di luar function
+
+Contoh Scope Global:
+
+x = 10  # Variabel global
+
+def contoh():
+    global x
+    x = 20
+    print(x)
+
+contoh()
+print(x)  # Output: 20
+
+9. Rekursi dalam Function
+
+Function dapat memanggil dirinya sendiri, yang disebut rekursi.
+
+Contoh Rekursi (Faktorial):
+
+def faktorial(n):
+    if n == 1:
+        return 1
+    return n * faktorial(n - 1)
+
+print(faktorial(5))  # Output: 120
+
+10. Function dalam Function (Nested Function)
+
+Function dapat didefinisikan di dalam function lain.
+
+Contoh:
+
+def luar():
+    def dalam():
+        print("Ini adalah function dalam")
+    dalam()
+
+luar()
+
+11. Function sebagai Argument
+
+Function dapat digunakan sebagai parameter untuk function lain.
+
+Contoh:
+
+def salam(nama):
+    return f"Halo, {nama}!"
+
+def panggil_func(func, nama):
+    return func(nama)
+
+print(panggil_func(salam, "Andi"))  # Output: Halo, Andi!
+
+Kesimpulan
+
+Function di Python sangat penting dalam membuat kode yang lebih rapi, modular, dan efisien. Dengan memahami konsep dasar function, Anda dapat mengembangkan program yang lebih kompleks dengan mudah. Selamat mencoba!
+
